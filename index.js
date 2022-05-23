@@ -2,14 +2,14 @@ const { face, body, background } = require("./traits.js");
 const { create } = require("./create.js");
 //const { makeCSV } = require("./file.js");
 
-const NUM_OF_FACES = 100;
-const NUM_OF_BODY = 5;
-const NUM_OF_BACKGROUND = 2;
+const NUM_OF_FACES = 2;
+const NUM_OF_BODY = 1;
+const NUM_OF_BACKGROUND = 1;
 
-// 500개 발행
-const TARGET_NUM_OF_NFT = 500;
+// 2개 발행
+const TARGET_NUM_OF_NFT = 2;
 
-const RARE_TRAIT = 77;
+const RARE_TRAIT = 2;
 const MAX_NUM_OF_RARITY = 2;
 
 let NFTs = [];
@@ -69,7 +69,7 @@ console.log(`TOTAL_NUM_OF_RARITY = ${totalCountOfRareTrait}`);
 (async () => {
     console.log("Creating...");
     //for (let i=0; i<NFTs.length; i++) {
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 2; i++) {
         await create(NFTs[i], i);
     }
 })();

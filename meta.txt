@@ -17,3 +17,7 @@
 8=ipfs://bafyreiczakkk5ikuk4hiauqh6xuuwutr7xduse6u3spnrkpwsrzrro6e2m/metadata.json
 9=ipfs://bafyreicydtxtivhbhwjfv7dfpwxrz36sbr7fxxrkwc5rh35wfril2zwwya/metadata.json
 10=ipfs://bafyreihy2lqahvcazmx3va4vhxi6wya2r522rv4mdmpydtc7oqwiozjkpu/metadata.json
+1=ipfs://bafyreigb3qtoptf6uho5vegemvpag62gtxp3dqh2xnwv6kzmps6gc5s55y/metadata.json
+2=ipfs://bafyreidiprltk2mywzabhhtbi54sgikvzd5yc2ydm6qcvuwdy3kpwieori/metadata.json
+1=ipfs://bafyreigb3qtoptf6uho5vegemvpag62gtxp3dqh2xnwv6kzmps6gc5s55y/metadata.json
+2=ipfs://bafyreidiprltk2mywzabhhtbi54sgikvzd5yc2ydm6qcvuwdy3kpwieori/metadata.json

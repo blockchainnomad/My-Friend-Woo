@@ -1,0 +1,16 @@
+{
+  "name": "woo-gen",
+  "version": "1.0.0",
+  "description": "우리의 여우친구 WOO를 제너러티브 아트로 생성할 것입니다.",
+  "main": "index.js",
+  "repository": "https://github.com/blockchainnomad/woo-gen.git",
+  "author": "blockchainnomad <40536266+blockchainnomad@users.noreply.github.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "canvas": "^2.9.1",
+    "nft.storage": "^6.3.0"
+  },
+  "volta": {
+    "node": "18.2.0"
+  }
+}

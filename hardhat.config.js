@@ -13,17 +13,6 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     console.log(account.address);
   }
 });
-// 현재 발행된 토큰의 개수(판매한 것을 제외하고 발행자가 소유한 토큰의 개수)
-// task("minted", "Prints balance of ALS", async (taskArgs, hre) => {
-//
-//   const OWNER = "";
-//   const f = await hre.ethers.getContractFactory("ALSnft");
-//   const alsNft = await f.attach("0x219...6E50");
-//
-//   const balance = await alsNft.balanceOf(OWNER);
-//   console.log(`${balance.toString()} minted`);
-//
-// });
 
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more

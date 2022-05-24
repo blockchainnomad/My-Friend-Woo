@@ -158,9 +158,9 @@ function WooList() {
                         : <Button color="primary" variant="contained" onClick={handleMint} tokenid={i + 1}>mint</Button>
                 }
 
-                {/* <Button color="primary" variant="contained" onClick={handleSale} tokenid={i + 1}> */}
-                {/* sale */}
-                {/* </Button> */}
+                {/* <Button color="primary" variant="contained" onClick={handleSale} tokenid={i + 1}>
+                    sale
+                </Button> */}
                 <Popover
                     open={open}
                     anchorEl={anchorEl}

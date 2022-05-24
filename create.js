@@ -1,4 +1,4 @@
-const dotenv = require("dotenv")
+const env = require("dotenv")
 const fs = require("fs");
 const { createCanvas, loadImage } = require("canvas");
 const { background, body, face, ears, clothes, effect, hands, misc } = require("./traits.js");
@@ -7,8 +7,8 @@ const { saveMetadataUri } = require("./file.js");
 const { NFTStorage, File } = require("nft.storage");
 
 // NFT Storage API Key
-require('dotenv').config()
-const apiKey = process.env.APIKEY
+env.config()
+const apiKey = process.env.NFT_STORAGE
 const client = new NFTStorage({ token: apiKey })
 
 const canvas = createCanvas(500, 500);

@@ -1,15 +1,15 @@
+const dotenv = require("dotenv")
 const fs = require("fs");
 const { createCanvas, loadImage } = require("canvas");
-const { face, body, background, ears, clothes, effect, hands, misc } = require("./traits.js");
+const { background, body, face, ears, clothes, effect, hands, misc } = require("./traits.js");
 const { saveMetadataUri } = require("./file.js");
 
 const { NFTStorage, File } = require("nft.storage");
 
 // NFT Storage API Key
-const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGY2ODA5YkY1MjU5MmUxRDQ5MmREOTJEZGQ3MGM4QzVEQ0JFMkJjRTUiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY0Njg5NDEzMDQ1OCwibmFtZSI6ImJsb2NrY2hhaW5ub21hZCJ9.dYBv26wucsU-23Cl9Fw0B8Y1YyNYELwhMW-CYCst_Fo";
-
+require('dotenv').config()
+const apiKey = process.env.APIKEY
 const client = new NFTStorage({ token: apiKey })
-
 
 const canvas = createCanvas(500, 500);
 const ctx = canvas.getContext('2d');
@@ -25,16 +25,16 @@ const getAttributes = (v, k) => {
 
     switch (k) {
         case 0:
-            trait_type = "Face";
-            value = face[v - 1].name;
+            trait_type = "Background";
+            value = background[v - 1].name;
             break;
         case 1:
             trait_type = "Body";
             value = body[v - 1].name;
             break;
         case 2:
-            trait_type = "Background";
-            value = background[v - 1].name;
+            trait_type = "Face";
+            value = face[v - 1].name;
             break;
         case 3:
             trait_type = "Ears";
@@ -45,16 +45,16 @@ const getAttributes = (v, k) => {
             value = clothes[v - 1].name;
             break;
         case 5:
-            trait_type = "Effect";
-            value = effect[v - 1].name;
-            break;
-        case 6:
             trait_type = "Hands";
             value = hands[v - 1].name;
             break;
-        case 7:
+        case 6:
             trait_type = "Misc";
             value = misc[v - 1].name;
+            break;
+        case 7:
+            trait_type = "Effect";
+            value = effect[v - 1].name;
             break;
         default:
             trait_type = "";
@@ -107,14 +107,14 @@ const uploadMetaData = async (t, i) => {
 
 const create = async (t, i) => {
 
-    const face = await loadImage(`${FILE_PATH}/Face/${t[0]}.png`);
+    const background = await loadImage(`${FILE_PATH}/Background/${t[0]}.png`);
     const body = await loadImage(`${FILE_PATH}/Body/${t[1]}.png`);
-    const background = await loadImage(`${FILE_PATH}/Background/${t[2]}.png`);
+    const face = await loadImage(`${FILE_PATH}/Face/${t[2]}.png`);
     const ears = await loadImage(`${FILE_PATH}/Ears/${t[3]}.png`);
     const clothes = await loadImage(`${FILE_PATH}/Clothes/${t[4]}.png`);
-    const effect = await loadImage(`${FILE_PATH}/Effect/${t[5]}.png`);
-    const hands = await loadImage(`${FILE_PATH}/Hands/${t[6]}.png`);
-    const misc = await loadImage(`${FILE_PATH}/Misc/${t[7]}.png`);
+    const hands = await loadImage(`${FILE_PATH}/Hands/${t[5]}.png`);
+    const misc = await loadImage(`${FILE_PATH}/Misc/${t[6]}.png`);
+    const effect = await loadImage(`${FILE_PATH}/Effect/${t[7]}.png`);
 
     // 아래서부터 위로 순서를 지켜야 한다.
     // 각 요소의 위치를 이미 맞추어 이미지를 만들었으므로 좌표는 (0,0)에 맞춘다.

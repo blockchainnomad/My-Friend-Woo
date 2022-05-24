@@ -1,24 +1,28 @@
-const face = [
-    { id: 1, name: 'face_one' }
-    , { id: 2, name: 'face_two' }
+const background = [
+    { id: 1, name: 'yellow' },
+    { id: 2, name: 'green' },
+    { id: 3, name: 'white' }
 ];
 
 const body = [
     { id: 1, name: 'body_one' }
 ];
 
-const background = [
-    { id: 1, name: 'background_one' }
+const face = [
+    { id: 1, name: 'face_one' },
+    { id: 2, name: 'face_two' }
 ];
 
 const ears = [
-    { id: 1, name: 'ears_one' }
-    , { id: 2, name: 'ears_two' }
+    { id: 1, name: 'ears_one' },
+    { id: 2, name: 'ears_two' }
 ]
 
 const clothes = [
-    { id: 1, name: 'clothes_one' }
-    , { id: 2, name: 'clothes_two' }
+    { id: 1, name: 'clothes_one' },
+    { id: 2, name: 'clothes_two' },
+    { id: 3, name: 'blue_dot' },
+
 ]
 
 const effect = [
@@ -28,13 +32,14 @@ const hands = [
     { id: 1, name: 'hands_one' }
 ]
 const misc = [
-    { id: 1, name: 'misc_one' }
+    { id: 1, name: 'pancake' },
+    { id: 2, name: 'nut' }
 ]
 
 module.exports = {
-    face,
-    body,
     background,
+    body,
+    face,
     ears,
     clothes,
     effect,

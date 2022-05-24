@@ -1,18 +1,18 @@
-const { face, body, background, ears, clothes, effect, hands, misc } = require("./traits.js");
+const { background, body, face, ears, clothes, effect, hands, misc } = require("./traits.js");
 const { create } = require("./create.js");
 //const { makeCSV } = require("./file.js");
 
-const NUM_OF_FACES = 2;
+const NUM_OF_BACKGROUND = 3;
 const NUM_OF_BODY = 1;
-const NUM_OF_BACKGROUND = 1;
+const NUM_OF_FACES = 2;
 const NUM_OF_EARS = 2;
-const NUM_OF_CLOTHES = 2;
-const NUM_OF_EFFECT = 1;
+const NUM_OF_CLOTHES = 3;
 const NUM_OF_HANDS = 1;
-const NUM_OF_MISC = 1;
+const NUM_OF_MISC = 2;
+const NUM_OF_EFFECT = 1;
 
-// 8개 발행
-const TARGET_NUM_OF_NFT = 8;
+// 10개 발행
+const TARGET_NUM_OF_NFT = 10;
 
 // 1번 특성을 2개 이하로 생성
 const RARE_TRAIT = 1;
@@ -33,14 +33,14 @@ const fnGenerateWithoutRedundancy = () => {
     let nftTobe = [];
 
     // nftTobe.push(fnCheckRareTrait(face[fnRng(NUM_OF_FACES)].id));
-    nftTobe.push(face[fnRng(NUM_OF_FACES)].id);
-    nftTobe.push(body[fnRng(NUM_OF_BODY)].id);
     nftTobe.push(background[fnRng(NUM_OF_BACKGROUND)].id);
+    nftTobe.push(body[fnRng(NUM_OF_BODY)].id);
+    nftTobe.push(face[fnRng(NUM_OF_FACES)].id);
     nftTobe.push(ears[fnRng(NUM_OF_EARS)].id);
     nftTobe.push(clothes[fnRng(NUM_OF_CLOTHES)].id);
-    nftTobe.push(effect[fnRng(NUM_OF_EFFECT)].id);
     nftTobe.push(hands[fnRng(NUM_OF_HANDS)].id);
     nftTobe.push(misc[fnRng(NUM_OF_MISC)].id);
+    nftTobe.push(effect[fnRng(NUM_OF_EFFECT)].id);
 
     if (NFTs.length > 0) {
         for (let i = 0; i < NFTs.length; i++) {
@@ -66,7 +66,7 @@ const fnCheckRareTrait = (t) => {
     }
 }
 
-// nft 개수는 TARGET_NUM_OF_NFT 개수로 제한한다
+// nft 개수는 TARGET_NUM_OF_NFT 이하로 제한한다
 while (NFTs.length < TARGET_NUM_OF_NFT) {
     const n = fnGenerateWithoutRedundancy();
     if (n !== null) {
@@ -75,13 +75,13 @@ while (NFTs.length < TARGET_NUM_OF_NFT) {
     }
 }
 
-console.log(`TOTAL_NUM_OF_NFT = ${NFTs.length}`);
-console.log(`TOTAL_NUM_OF_RARITY = ${totalCountOfRareTrait}`);
+console.log(`NFT 생성 개수 = ${NFTs.length}`);
+console.log(`희귀성 개수 = ${totalCountOfRareTrait}`);
 
 (async () => {
-    console.log("Creating...");
+    console.log("생성중입니다");
     //for (let i=0; i<NFTs.length; i++) {
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < 10; i++) {
         await create(NFTs[i], i);
     }
 })();
